@@ -86,6 +86,9 @@ class TodoList extends Component {
   };
 
   editTodo = (id) => {
+    if (this.edit === 'submit') {
+      this.edit = 'update';
+    }
     const neededTodo = this.state.todoList.find((todo) => todo.id === id);
 
     this.setState((prev) => {
@@ -140,6 +143,7 @@ class TodoList extends Component {
             <Form.Control
               className="text"
               type="date"
+              defaultvalue="2013-01-08"
               placeholder="mm/dd/yyyy"
               value={this.state.currentTodo.date}
               onChange={this.handleChangeValues}
