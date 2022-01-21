@@ -31,7 +31,15 @@ class TodoList extends Component {
       isEditMode: false,
       editTodoId: '',
     };
+    this.edit = 'submit';
   }
+  updateTodo = (event) => {
+    if (this.edit === 'submit') {
+      this.edit = 'update';
+    } else {
+      this.edit = 'submit';
+    }
+  };
 
   addTodo = (event) => {
     event.preventDefault();
@@ -208,13 +216,25 @@ class TodoList extends Component {
               😭
             </Button>
           </div>
-          <Button
-            type="submit"
-            style={{ marginTop: '12%' }}
-            className="success"
-          >
-            Submit
-          </Button>
+          {this.edit === 'submit' && (
+            <Button
+              type="submit"
+              style={{ marginTop: '12%' }}
+              className="success"
+            >
+              Submit
+            </Button>
+          )}
+          {this.edit === 'update' && (
+            <Button
+              type="submit"
+              style={{ marginTop: '12%' }}
+              className="success"
+              onClick={this.updateTodo}
+            >
+              update
+            </Button>
+          )}
         </Form>
         <div className="box">
           <ListGroup className="list text-white">
