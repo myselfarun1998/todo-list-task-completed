@@ -170,7 +170,7 @@ class TodoList extends Component {
               type="time"
               placeholder="Enter the Time"
               name="time"
-              defaultValue={this.time}
+              defaultValue={this.t}
               // value={this.state.currentTodo.time}
               onChange={this.handleChangeValues}
               ref={this.formBasicTime}
@@ -183,7 +183,7 @@ class TodoList extends Component {
               type="text"
               placeholder="write something about your Task"
               name="taskTitle"
-              // value={this.state.currentTodo.taskTitle}
+              value={this.state.currentTodo.taskTitle}
               onChange={this.handleChangeValues}
               ref={this.formBasicTaskTitle}
             />
