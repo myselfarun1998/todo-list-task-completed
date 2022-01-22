@@ -17,6 +17,18 @@ const emojiNameList = {
 class TodoList extends Component {
   constructor() {
     super();
+    const d = new Date();
+    let m = d.getMonth() + 1;
+    let date = d.getDate();
+    if (m < 10) {
+      m = '0' + m;
+    }
+    if (date < 10) {
+      date = '0' + date;
+    }
+    this.dateval = d.getFullYear() + '-' + m + '-' + date;
+    console.log(this.dateval);
+    this.time = d.getHours() + ':' + d.getMinutes();
     this.formBasicDate = React.createRef();
     this.formBasicTime = React.createRef();
     this.formBasicTaskTitle = React.createRef();
@@ -143,12 +155,12 @@ class TodoList extends Component {
             <Form.Control
               className="text"
               type="date"
-              defaultvalue="2013-01-08"
               placeholder="mm/dd/yyyy"
-              value={this.state.currentTodo.date}
+              // value={this.state.currentTodo.date}
               onChange={this.handleChangeValues}
               name="date"
               ref={this.formBasicDate}
+              defaultValue={this.dateval}
             />
           </Form.Group>
           <Form.Group controlId="formBasicTime">
@@ -158,7 +170,8 @@ class TodoList extends Component {
               type="time"
               placeholder="Enter the Time"
               name="time"
-              value={this.state.currentTodo.time}
+              defaultValue={this.time}
+              // value={this.state.currentTodo.time}
               onChange={this.handleChangeValues}
               ref={this.formBasicTime}
             />
