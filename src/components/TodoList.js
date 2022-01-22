@@ -58,8 +58,8 @@ class TodoList extends Component {
 
     const { taskTitle, date, time, emoji } = this.state.currentTodo;
 
-    if (!taskTitle || !date || !time || !emoji) {
-      return alert('Fill all the details to save');
+    if (!taskTitle || !emoji) {
+      return alert('Fill all the details ');
     }
 
     const newTodo = {
