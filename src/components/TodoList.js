@@ -183,7 +183,7 @@ class TodoList extends Component {
               type="text"
               placeholder="write something about your Task"
               name="taskTitle"
-              value={this.state.currentTodo.taskTitle}
+              // value={this.state.currentTodo.taskTitle}
               onChange={this.handleChangeValues}
               ref={this.formBasicTaskTitle}
             />
