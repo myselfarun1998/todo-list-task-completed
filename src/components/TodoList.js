@@ -80,12 +80,7 @@ class TodoList extends Component {
         return {
           ...prev,
           todoList: currentList,
-          currentTodo: {
-            taskTitle: '',
-            date: this.dateval,
-            time: this.time,
-            emoji: '',
-          },
+          currentTodo: { taskTitle: '', date: '', time: '', emoji: '' },
           isEditMode: false,
           editTodoId: '',
         };
@@ -160,6 +155,7 @@ class TodoList extends Component {
               className="text"
               type="date"
               placeholder="mm/dd/yyyy"
+              // value={this.state.currentTodo.date}
               onChange={this.handleChangeValues}
               name="date"
               ref={this.formBasicDate}
