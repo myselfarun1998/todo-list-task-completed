@@ -58,10 +58,11 @@ class TodoList extends Component {
 
     const { taskTitle, date, time, emoji } = this.state.currentTodo;
 
-    if (!taskTitle || !emoji) {
-      return alert('Fill all the details ');
+    if (!taskTitle || !date || !time || !emoji) {
+      return alert('Fill all the details to save');
     }
 
+    // const data = event.target,
     const newTodo = {
       taskTitle,
       date,
@@ -170,7 +171,7 @@ class TodoList extends Component {
               type="time"
               placeholder="Enter the Time"
               name="time"
-              defaultValue={this.t}
+              defaultValue={this.time}
               // value={this.state.currentTodo.time}
               onChange={this.handleChangeValues}
               ref={this.formBasicTime}
