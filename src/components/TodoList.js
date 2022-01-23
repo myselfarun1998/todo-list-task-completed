@@ -95,7 +95,12 @@ class TodoList extends Component {
         return {
           ...prev,
           todoList: [...prev.todoList, newTodo],
-          currentTodo: { taskTitle: '', date: '', time: '', emoji: '' },
+          currentTodo: {
+            taskTitle: '',
+            date: this.dateval,
+            time: this.time,
+            emoji: '',
+          },
         };
       });
     }
