@@ -155,7 +155,6 @@ class TodoList extends Component {
               className="text"
               type="date"
               placeholder="mm/dd/yyyy"
-              // value={this.state.currentTodo.date}
               onChange={this.handleChangeValues}
               name="date"
               ref={this.formBasicDate}
@@ -170,7 +169,6 @@ class TodoList extends Component {
               placeholder="Enter the Time"
               name="time"
               defaultValue={this.time}
-              // value={this.state.currentTodo.time}
               onChange={this.handleChangeValues}
               ref={this.formBasicTime}
             />
