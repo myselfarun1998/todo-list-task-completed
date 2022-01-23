@@ -36,8 +36,8 @@ class TodoList extends Component {
       todoList: [],
       currentTodo: {
         taskTitle: '',
-        date: '',
-        time: '',
+        date: this.dateval,
+        time: this.time,
         emoji: '',
       },
       isEditMode: false,
